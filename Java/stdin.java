@@ -11,15 +11,23 @@ public class Solution {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        int i = in.nextInt();
-        double d = in.nextDouble();
+        int c = 0;
+        int i = 0;
+        double d = 0.00; 
         String s = "";
-        while(in.hasNext()) {
-            s = s + in.next() + " ";
+        
+        while(in.hasNext())
+        {
+            if (c == 0) { i = in.nextInt(); }
+            if (c == 1) { d = in.nextDouble(); }
+            if (c > 1) { s = in.nextLine(); }
+            
+            c++;
         }
         
-        System.out.println("String: " + s.substring(0, s.length() - 1));
+        System.out.println("String: " + s);
         System.out.println("Double: " + d);
         System.out.println("Int: " + i);
     }
 }
+

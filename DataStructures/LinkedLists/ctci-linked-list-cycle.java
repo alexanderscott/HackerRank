@@ -1,3 +1,5 @@
+package LinkedLists;
+
 // https://www.hackerrank.com/challenges/ctci-linked-list-cycle/problem
 
 /*
@@ -13,17 +15,19 @@ A Node is defined as:
 import java.util.HashSet;
 import java.util.Set;
 
-class Node {
-    int data;
-    Node next;
-}
-
-boolean hasCycle(Node head) {
-    Set seen = new HashSet<Node>();
-    while (head != null) {
-        seen.add(head);
-        head = head.next;
-        if (seen.contains(head)) return true;
+class LinkedListCycleSolution {
+    class Node {
+        int data;
+        Node next;
     }
-    return false;
+
+    boolean hasCycle(Node head) {
+        Set seen = new HashSet<Node>();
+        while (head != null) {
+            seen.add(head);
+            head = head.next;
+            if (seen.contains(head)) return true;
+        }
+        return false;
+    }
 }

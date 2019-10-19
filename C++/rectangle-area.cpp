@@ -6,45 +6,35 @@
 #include <iostream>
 #include <algorithm>
 #include <cassert>
+
 using namespace std;
 
 class Rectangle {
-private:
+protected:
     int width;
     int height;
 
 public:
-    /*
-    Rectangle(int w, int h) {
-        width = w;
-        height = h;
-    }
-    */
 
     int size() { 
         return width * height; 
     }
 
-    void Display() {
+    void display() {
         cout << width << " " << height << endl;
     }
     
 };
 
 class RectangleArea : public Rectangle {
-private:
-    int width;
-    int height;
-
 public:
-    //RectangleArea(int w, int h);
 
-    void Input() {
+    void read_input() {
         cin >> width;
         cin >> height;
     }
 
-    void Display() {
+    void display() {
         cout << width * height << endl; 
     }
 };
